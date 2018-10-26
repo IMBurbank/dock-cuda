@@ -18,7 +18,8 @@ RUN apt-get update && \
 ENV CUDA_VERSION 9.0.176
 
 ENV CUDA_PKG_VERSION 9-0=$CUDA_VERSION-1
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
         cuda-cudart-$CUDA_PKG_VERSION && \
     ln -s cuda-9.0 /usr/local/cuda && \
     rm -rf /var/lib/apt/lists/*
